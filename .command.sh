@@ -1,6 +1,6 @@
 function rescue() {
 
-command="$(bb .command.clj | fzf)"
+command="$(bb "${RIP_DEADCODE_COMMAND_HOME}"/.command.clj | fzf)"
 
 if [ -n "$command" ]; then
   command="$(sed -E "s/(^.* {8})//" <<< "$command")"

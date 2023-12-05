@@ -7,9 +7,19 @@
     "./list.yaml"))
 
 (def separator "        ")
+(def ws-len-td 40)
+
+(defn join-command [map]
+  (let [desc (:desc map)
+        c (:c map)]
+    (if (> (.length desc) ws-len-td)
+      (str desc separator c)
+      (str
+        desc
+        (clojure.string/join (repeat (- ws-len-td (.length desc)) " "))
+        c))))
 
 (as-> (slurp command-list-location) _
   (yaml/parse-string _)
-  (map #(clojure.string/join separator [(:desc %) (:c %)]) _)
-  (clojure.string/join "\n" _)
-  (print _))
+  (map join-command _)
+  (doseq [e _] (println e)))
