@@ -3,6 +3,7 @@
 (def command-list-location
   (or
     (System/getenv "RIP_DEADCODE_COMMAND_LIST_URL")
+    "https://raw.githubusercontent.com/minebreaker/command/master/list.yaml"
     "./list.yaml"))
 
 (def separator "        ")
