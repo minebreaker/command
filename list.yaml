@@ -1,0 +1,47 @@
+# Daily tasks
+- desc: Discover files
+  c: ranger
+- desc: list files and directories in tree
+  c: exa --tree --level=2 --color always | less -R
+- desc: show disk usage
+  c: df -h
+- desc: show disk usage in graphic
+  c: ncdu
+- desc: show calendar
+  c: cal -3
+- desc: yt-dlp - download audio only
+  c: echo '`yt-dlp $url -x --audio-format mp3`'
+
+# Network
+# https://unix.stackexchange.com/questions/106561/finding-the-pid-of-the-process-using-a-specific-port
+- desc: list all processes using port
+  c: netstat -nlp | less -R
+- desc: list processes using port
+  c: echo \"port?\" && read port && netstat -nlp | rg :$port --color always | less -R
+- desc: resolve dns
+  c: echo 'you can use `cat` as always but `dog` is your friend.'
+
+# Programming
+- desc: npm - list all globally installed packages
+  c: npm list -g --depth=0
+
+# Git related
+- desc: git - unsatage all files
+  c: git reset"
+  # https://stackoverflow.com/a/10099285
+- desc: git - recover lost commits
+  c: echo 'run `git reflog` and then run `git reset --hard ${commit_id}`. see https://stackoverflow.com/a/10099285 for details.'"
+- desc: git - remove branches without remotes
+  c: echo 'see https://stackoverflow.com/a/28464339'"
+
+# Docker
+- desc: docker - list all images
+  c: docker image list
+- desc: docker - list all containers
+  c: docker container list
+- desc: docker - copy a file from the container to the host
+  c: echo 'docker cp <container_id>:/path/to/container/file /path/on/host'
+- desc: docker - show disk usage
+  c: docker system df
+- desc: docker compose - start containers with project name
+  c: echo 'use `docker compose -p ${project} up -d`'
