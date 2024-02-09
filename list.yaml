@@ -20,6 +20,14 @@
 - desc: Count characters in file
   c: echo 'wc -m $file  # note `-c` does not support unicodes'
 
+# Linux
+- desc: list all users on the Linux
+  c: getent passwd
+- desc: add user on the linux
+  c: echo 'sudo adduser [username]'
+- desc: change password of the user on the linux
+  c: echo 'sudo passwd [username]  # note: use smbpasswd for smb!'
+
 # Network
 # https://unix.stackexchange.com/questions/106561/finding-the-pid-of-the-process-using-a-specific-port
 - desc: list all processes using port
