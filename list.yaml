@@ -18,7 +18,9 @@
 - desc: Count words in file
   c: echo 'wc -w $file'
 - desc: Count characters in file
-  c: echo 'wc -m $file  # note `-c` does not support unicodes'
+  c: "echo 'wc -m $file  # note `-c` does not support unicodes'"
+- desc: How to use SSH
+  c: "echo 'ssh user@address -p port -i extra-privte-key  # Password may be asked'"
 
 # Linux
 - desc: list all users on the Linux
@@ -61,3 +63,7 @@
   c: docker system df
 - desc: docker compose - start containers with project name
   c: echo 'use `docker compose -p ${project} up -d`'
+
+# AWS
+- desc: aws - list all profiles
+  c: aws configure list-profiles
