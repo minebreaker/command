@@ -65,6 +65,8 @@
   c: echo 'use `docker compose -p ${project} up -d`'
 - desc: docker - -v flag - the left is the host and the right is mounted on the container
   c: echo '-v host:container'
+- desc: docker - show logs of the container
+  c: echo 'Container ID?' && read cid && docker logs $cid
 
 # AWS
 - desc: aws - list all profiles
