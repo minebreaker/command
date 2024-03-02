@@ -63,6 +63,8 @@
   c: docker system df
 - desc: docker compose - start containers with project name
   c: echo 'use `docker compose -p ${project} up -d`'
+- desc: docker - -v flag - the left is the host and the right is mounted on the container
+  c: echo '-v host:container'
 
 # AWS
 - desc: aws - list all profiles
