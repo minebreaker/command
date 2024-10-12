@@ -21,6 +21,12 @@
   c: "echo 'wc -m $file  # note `-c` does not support unicodes'"
 - desc: How to use SSH
   c: "echo 'ssh user@address -p port -i extra-privte-key  # Password may be asked'"
+- desc: Extract gzip (.tar.gz)
+  c: "echo 'tar -xzvf'"
+- desc: Extract bzip2 (.tar.bz2)
+  c: "echo 'tar -xjvf'"
+- desc: Tar sucks
+  c: "echo 'https://www.xkcd.com/1168/'"
 
 # Linux
 - desc: list all users on the Linux
